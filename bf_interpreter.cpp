@@ -61,7 +61,7 @@ int main(int argc,char **argv){
 	char *head = arr;
 	
 	if(argc == 1){
-		system("cls");
+		system("clear");
 		string input = "";
 		
 		cout << "\n>>> ";
@@ -80,7 +80,7 @@ int main(int argc,char **argv){
 			cout << "\n>>> ";
 			getline(cin,input);
 		}
-		system("cls");
+		system("clear");
 		return 0;
 	}
 	

@@ -4,14 +4,14 @@
 using namespace std;
 
 int main(int argc,char **argv){
-	bool to_C = false;
+	bool compile = false;
 	string input_file = "";
 	string output_file = "a";
 	
 	for(int i=1;i<argc;i++){
 		if(*(argv[i]) == '-'){
 			if((*(argv[i]+1) == 'c') || (*(argv[i]+1) == 'C')){
-				to_C = true;
+				compile = true;
 			}
 			else if ((*(argv[i]+1) == 'o') || (*(argv[i]+1) == 'O')){
 				output_file =  argv[i+1];
@@ -44,12 +44,12 @@ int main(int argc,char **argv){
 	ofile << "\n\nfree(arr);\nreturn 0;\n}";
 	ofile.close();
 	
-	if(to_C){return 0;}
+	if(!compile){return 0;}
 	
 	string command = "gcc " + output_file + ".c -o " + output_file;
 	
 	system(command.c_str());
-	remove((output_file + ".c").c_str());
+	//remove((output_file + ".c").c_str());
 	
 	return 0;
 }
