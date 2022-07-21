@@ -1,2 +1,2 @@
-# BF compiler and interpreter
+# BF interpreter and converter(to C)
 No error checking.
